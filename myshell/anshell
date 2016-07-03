@@ -1,0 +1,3 @@
+#!/bin/bash
+# 	
+ansible $1 -m shell -a "$2"
