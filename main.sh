@@ -11,7 +11,7 @@ add_alias(){
 
 add_ali_repo(){
 	cd /etc/yum.repos.d/
-	tar zc ./* -f bak.tar.gz && rm -rf *.repo
+	ls * && tar zc ./* -f bak.tar.gz && rm -rf *.repo
 	cd -
 	egrep "5\." /etc/issue && linux_version=5
 	egrep "6\." /etc/issue && linux_version=6
