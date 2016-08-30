@@ -2,8 +2,10 @@
 #
 # first step to add alias
 add_alias(){
+	ech
 	echo "#Alias defined by Hiyang @ `date +"%F %T"`" >>  ~/.bashrc
 	cat ./mybashrc.sh >> ~/.bashrc
+	ech
 	. ~/.bashrc
 }
 
@@ -14,8 +16,8 @@ add_ali_repo(){
 	egrep "5\." /etc/issue && linux_version=5
 	egrep "6\." /etc/issue && linux_version=6
 
-	cp ./repo/Centos-$1.repo /etc/yum.repos.d/
-	cp ./repo/epel-$1.repo /etc/yum.repos.d/
+	cp ./repo/Centos-$linux_version.repo /etc/yum.repos.d/
+	cp ./repo/epel-$linux_version.repo /etc/yum.repos.d/
 }
 
 add_vimrc(){
@@ -47,7 +49,7 @@ ech-
 ls /etc/yum.repos.d/
 ech-
 read -p "Do you want to add and backup?(y/n) " addrepo
-test $addrepo = "y" && add_ali_repo $linux_version && echo -e "\e[32m Add Repo OK.\e[0m"
+test $addrepo = "y" && add_ali_repo && echo -e "\e[32m Add Repo OK.\e[0m"
 ech
 
 # Step 3
