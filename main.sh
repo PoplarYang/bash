@@ -2,8 +2,8 @@
 #
 # first step to add alias
 add_alias(){
-	ech >> ~/.bashrc
 	echo "#Alias defined by Hiyang @ `date +"%F %T"`" >>  ~/.bashrc
+	ech >> ~/.bashrc
 	cat ./mybashrc.sh >> ~/.bashrc
 	ech >> ~/.bashrc
 	. ~/.bashrc
