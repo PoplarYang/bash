@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+## Set the file of yumrepo ON/OFF.
+#
+## Usage: setyum file on/off
+
+## Step One: Show Current Status.
+egrep --color "\[.*\]|enabled=" $1
+
+## Step Two: Whether Going ON.
+grep "enabled=1" $1 > /dev/null && current_status=on || current_status=off 
+
+test $current_status = "$2" && echo "the file has been $2 before modify." && exit 0
+
+## Step Three: Dodify 
+test $current_status = "on" && sed -i 's/enabled=1/enabled=0/' $1 && echo "ON --> OFF" && exit 0
+test $current_status = "off" && sed -i 's/enabled=0/enabled=1/' $1 && echo "OFF --> ON" && exit 0
