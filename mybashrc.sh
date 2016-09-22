@@ -24,3 +24,5 @@ alias gitpush='git push -u origin master'
 # about ntpdate
 alias ntime='ntpdate cn.pool.ntp.org'
 
+# about log
+alias tailfm='tail -f /var/log/messages'
