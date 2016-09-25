@@ -5,6 +5,7 @@ alias sernet='service network'
 
 # about yum
 alias yumin='yum install'
+alias yumloin='yum localinstall'
 alias yumre='yum remove'
 
 # about ansible
@@ -12,3 +13,6 @@ alias anplay='ansible-playbook'
 
 # about git
 alias gitlog='git log'
+
+# about ntpdate
+alias ntpdatime='ntpdate cn.pool.ntp.org'
