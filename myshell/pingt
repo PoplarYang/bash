@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# show ip
+ip addr show | egrep "inet\>" | grep -v 127.0.0.1 | grep inet
+echo
+# whether network is OK
+echo
+ping -c 2 -w 2 192.168.1.1 | head -n 2
+echo
+ping -c 2 -w 2 www.baidu.com | head -n 2

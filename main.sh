@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # first step to add alias
-add_alias(){
-	echo "#Alias defined by Hiyang @ `date +"%F %T"`" >>  ~/.bashrc
-	ech >> ~/.bashrc
-	cat ./mybashrc.sh >> ~/.bashrc
-	ech >> ~/.bashrc
-	. ~/.bashrc
-}
+#add_alias(){
+#	echo "#Alias defined by Hiyang @ `date +"%F %T"`" >>  ~/.bashrc
+#	ech >> ~/.bashrc
+#	cat ./mybashrc.sh >> ~/.bashrc
+#	ech >> ~/.bashrc
+#	. ~/.bashrc
+#}
 
 add_ali_repo(){
 	cd /etc/yum.repos.d/
@@ -35,12 +35,14 @@ ech(){
 }
 
 # Step 1
-echo -e "\e[31m Step 1 Alias Setup\n		Listed on this bashrc\e[0m"
+echo -e "\e[31m Step 1 Alias Setup\n\t\t\t\tListed on this bashrc\e[0m"
 ech-
 cat ~/.bashrc
 ech-
-read -p "Do you want to add?(y/n) " addalias
-test $addalias = "y" && add_alias && echo -e "\e[32m Add Alias OK.\e[0m"
+echo -e "\t\t\t\t\e[31mListed on this mybashrc\e[0m"
+cat ./mybashrc.sh
+read -p "Do you want to source?(y/n) " addalias
+test $addalias = "y" && source ./mybashrc.sh && echo -e "\e[32m Source Alias OK.\e[0m"
 ech
 
 # Step 2
