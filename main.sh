@@ -40,18 +40,24 @@ ech-
 cat ~/.bashrc
 ech-
 echo -e "\t\t\t\t\e[31mListed on this mybashrc\e[0m"
-cat ./mybashrc.sh
+cat ./mybashrc/mybashrc.sh
 read -p "Do you want to source?(y/n) " addalias
-test $addalias = "y" && source ./mybashrc.sh && echo -e "\e[32m Source Alias OK.\e[0m"
+if [ $addalias = "y" ]; then
+	cp ~/aboutlinux/mybashrc/PATH.sh /etc/profile.d/ && echo -e "\e[32m Source PATH.sh OK.\e[0m"
+	cp ~/aboutlinux/mybashrc/mybashrc.sh /etc/profile.d/ && echo -e "\e[32m Source mybashrc.sh OK.\e[0m"
+fi
 ech
 
 # Step 2
-echo -e "\e[31m Step 2 Ali Repo Setup\n            Listed on this yum.repo.d.\e[0m"
+echo -e "\e[31m Step 2 Ali Repo Setup\n\t\t\t\tListed on this yum.repo.d.\e[0m"
 ech-
 ls /etc/yum.repos.d/
 ech-
 read -p "Do you want to add and backup?(y/n) " addrepo
-test $addrepo = "y" && add_ali_repo && echo -e "\e[32m Add Repo OK.\e[0m"
+if [ $addrepo = "y" ]; then
+	add_ali_repo && echo -e "\e[32m Add Repo OK.\e[0m"
+fi
+
 ech
 
 # Step 3
@@ -60,4 +66,7 @@ ech-
 test -e ~/.vimrc && cat ~/.vimrc || echo ".vimrc is not existed." && touch ~/.vimrc
 ech-
 read -p "Do you want to add?(y/n) " addvimrc
-test $addvimrc = "y" && add_vimrc && echo -e "\e[32m Add Vimrc OK.\e[0m"
+if [ $addvimrc = "y" ]; then 
+	add_vimrc && echo -e "\e[32m Add Vimrc OK.\e[0m"
+fi
+
