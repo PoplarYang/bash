@@ -1,0 +1,31 @@
+#!/bin/bash
+# backup file
+
+if [ $# -eq 0 ]; then
+	usage && exit 1
+fi
+
+backup() {
+	after_backup_filename=$1.`date +%F.%T`.bak
+	[ -e $1 ] && cp -p $1 $after_backup_filename && echo -e "\t\t\e[32m OK \e[0m" ||  echo -e "\t\t\e[31m Failed \e[0m"
+}
+
+unbackup() {
+	after_unbackup_filename=`echo $1 | sed "s/\.2.*bak$//"`
+	[ -e $1 ] && cp $1 $after_unbackup_filename && echo -e "\t\t\e[32m OK \e[0m" ||  echo -e "\t\t\e[31m Failed \e[0m"
+}
+
+usage() {
+	echo "usage:$0 [-d] filename"
+}
+
+if [ $1 = "-d" ]; then
+    shift 1
+    for i in $@; do
+        unbackup $i
+    done
+else
+    for j in $@; do
+        backup $j
+    done
+fi
