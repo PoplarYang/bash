@@ -7,11 +7,10 @@
 #              using the svn network protocol.
 
 # Modify exe, prog, option
-start_prog="/usr/local/apache-tomcat-8.5.4/bin/catalina.sh start"
-stop_prog="/usr/local/apache-tomcat-8.5.4/bin/catalina.sh stop"
-prog=tomcat
-port=8080
-#option="-d -r /data/svndata/"
+exe=/usr/bin/svnserve
+[ -x $exe ] || exit 5
+prog=svnserve
+option="-d -r /data/svndata/"
 
 delay_restart=5
 lockfile=/var/lock/subsys/$prog
@@ -19,31 +18,32 @@ lockfile=/var/lock/subsys/$prog
 ############################################################################################
 start() {
     if check_status &> /dev/null; then
-        echo "$prog is running... " && echo -e "Starting $prog: \t\t\e[31m[ failed ]\e[0m" && return 1
+        echo "$prog is running... " && echo -e "Starting $prog: \t\t\e[31m[ failed ]\e[0m"
     else
-        $start_prog $option && echo -e "Starting $prog: \t\t\e[32m[  OK  ]\e[0m" && touch $lockfile && return 0
+        $exe $option && echo -e "Starting $prog: \t\t\e[32m[  OK  ]\e[0m" && touch $lockfile
     fi
 }
 
 stop() {
     if check_status &> /dev/null; then
-        $stop_prog && rm -f $lockfile && echo -e "Stopping $prog: \t\t\e[32m[  OK  ]\e[0m" && return 0
+        pid
+        kill $pid && rm -f $lockfile && echo -e "Stopping $prog: \t\t\e[32m[  OK  ]\e[0m" 
     else
-        echo "$prog is stopped." && echo -e "Stopping $prog: \t\t\e[31m[ failed ]\e[0m" && return 1
+        echo "$prog is stopped." && echo -e "Stopping $prog: \t\t\e[31m[ failed ]\e[0m"
     fi   
 }
 
 pid() {
-    pid=`netstat -tlnp | egrep "$port\>" | awk '{ print $NF }' | cut -d / -f1`
+    pid=`netstat -tlnp | grep $prog | awk '{ print $NF }' | cut -d / -f1`
 }
 
 check_status() {
-    netstat -tlnp | egrep "$port\>"
+    netstat -tlnp | grep $prog
 }
 
 status() {
     echo "Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name"
-    check_status 2> /dev/null 
+    check_status 2> /dev/null
 }
 
 case "$1" in
