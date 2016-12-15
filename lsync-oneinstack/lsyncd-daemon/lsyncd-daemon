@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# start and stop lsyncd
+RSYNC_PID=$(ps aux | awk '$NF~/lsyncd.conf$/ {print $2}')
+
+start(){
+	if [ -z $RSYNC_PID ]; then
+		lsyncd -log Exec /etc/lsyncd.conf && echo -e "start lsyncd OK\c"
+		RSYNC_PID=$(ps aux | awk '$NF~/lsyncd.conf$/ {print $2}')
+		echo "[ PID $RSYNC_PID ]"
+	else
+		echo "rsync is running...[ PID $RSYNC_PID ]"
+	fi
+}
+
+stop(){
+	if [ -n $RSYNC_PID ]; then
+		kill $RSYNC_PID && echo "stop lsyncd OK"
+	else
+		echo "lsyncd is not running..."
+	fi
+}
+
+case $1 in
+	start)
+		start;;
+	stop)
+		stop;;
+	restart)
+		stop && start;;
+	*)
+	echo "Error Input!!"[ lsyncd-daemon start | stop | restart ];;
+esac
