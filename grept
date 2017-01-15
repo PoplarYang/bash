@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+## search a string with specified suffix in current directory
+# $1 : string for search
+# $2 : suffix
+
+find ./ -type f -name "*$2"| xargs file | awk -F : '/ASCII text$/ { print $1 }' | while read lines; do
+    if grep $1 $lines &> /dev/null; then
+	      echo -e "\e[33m$lines\e[0m" && grep --color -n $1 $lines
+    fi
+done
