@@ -1,3 +1,1 @@
-set ts=4
-set autoindent
-set paste
+set sw=4 ts=4 paste ai
