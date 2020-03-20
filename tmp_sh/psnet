@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-## the shell is intened to check whether the service is start and port is listened.
-ps aux | grep "$1"
-echo
-netstat -tlnp | grep "$2\>"

@@ -1,3 +1,0 @@
-#!/bin/bash
-# 	
-ansible $1 -m cron -a "$2"
