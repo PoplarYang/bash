@@ -1,0 +1,5 @@
+[openresty]
+name=Official OpenResty Open Source Repository for CentOS
+baseurl=http://openresty.org/package/centos/$releasever/$basearch
+gpgcheck=0
+enabled=1

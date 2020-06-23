@@ -1,0 +1,217 @@
+python-chardet not ok
+python-devel not ok
+python-netaddr not ok
+python-pip not ok
+python-pymongo not ok
+python-requests not ok
+python-six not ok
+libselinux-python not ok
+python-setuptools not ok
+python-urllib3 not ok
+createrepo not ok
+yum-utils not ok
+wget not ok
+curl not ok
+tree not ok
+lrzsz not ok
+telnet not ok
+net-tools not ok
+iproute not ok
+lsof not ok
+nmap not ok
+screen not ok
+numactl not ok
+parted not ok
+lsscsi not ok
+htop not ok
+iftop not ok
+iotop not ok
+ntp not ok
+ntpdate not ok
+rpm-build not ok
+iptables not ok
+iptables-services not ok
+sysstat not ok
+dstat not ok
+iperf not ok
+perf not ok
+smartmontools not ok
+redhat-lsb-core not ok
+ipmitool not ok
+vim-enhanced not ok
+git not ok
+openssl not ok
+gcc not ok
+cmake not ok
+perl not ok
+libcurl not ok
+libcurl-devel not ok
+apr-devel not ok
+subversion-devel not ok
+cyrus-sasl-devel not ok
+docker not ok
+openresty not ok
+nginx not ok
+chrony not ok
+memcached not ok
+redis not ok
+supervisor not ok
+httpd not ok
+httpd-utils not ok
+unbound not ok
+rpcbind not ok
+dnsmasq not ok
+nfs-utils not ok
+nfs-common not ok
+samba not ok
+samba-winbind-clients not ok
+samba-winbind not ok
+ctdb not ok
+ftp not ok
+vsftp not ok
+python-chardet ok
+python-chardet ok
+python-chardet ok
+python-chardet ok
+python-chardet ok
+python-devel not ok
+python-netaddr ok
+python-pip ok
+python-pymongo ok
+python-requests ok
+python-six ok
+libselinux-python ok
+python-setuptools ok
+python-urllib3 ok
+createrepo ok
+yum-utils ok
+wget ok
+curl ok
+tree ok
+lrzsz ok
+telnet ok
+net-tools ok
+iproute ok
+lsof ok
+nmap ok
+screen ok
+numactl ok
+parted ok
+lsscsi ok
+htop ok
+iftop ok
+iotop ok
+ntp ok
+ntpdate ok
+rpm-build ok
+iptables ok
+iptables-services ok
+sysstat ok
+dstat ok
+iperf ok
+perf ok
+smartmontools ok
+redhat-lsb-core ok
+ipmitool ok
+vim-enhanced ok
+git ok
+openssl ok
+gcc ok
+cmake ok
+perl ok
+libcurl ok
+libcurl-devel ok
+apr-devel ok
+subversion-devel ok
+cyrus-sasl-devel ok
+docker ok
+openresty ok
+nginx ok
+chrony ok
+memcached ok
+redis ok
+supervisor ok
+httpd ok
+httpd-utils not ok
+unbound ok
+rpcbind ok
+dnsmasq ok
+nfs-utils ok
+nfs-common not ok
+samba ok
+samba-winbind-clients ok
+samba-winbind ok
+ctdb ok
+ftp ok
+vsftp not ok
+python-chardet ok
+python-devel not ok
+python-netaddr ok
+python-pip ok
+python-pymongo ok
+python-requests ok
+python-six ok
+libselinux-python ok
+python-setuptools ok
+python-urllib3 ok
+createrepo ok
+yum-utils ok
+wget ok
+curl ok
+tree ok
+lrzsz ok
+telnet ok
+net-tools ok
+iproute ok
+lsof ok
+nmap ok
+screen ok
+numactl ok
+parted ok
+lsscsi ok
+htop ok
+iftop ok
+iotop ok
+ntp ok
+ntpdate ok
+rpm-build ok
+iptables ok
+iptables-services ok
+sysstat ok
+dstat ok
+iperf ok
+perf ok
+smartmontools ok
+redhat-lsb-core ok
+ipmitool ok
+vim-enhanced ok
+git ok
+openssl ok
+gcc ok
+cmake ok
+perl ok
+libcurl ok
+libcurl-devel ok
+apr-devel ok
+subversion-devel ok
+cyrus-sasl-devel ok
+docker ok
+openresty ok
+nginx ok
+chrony ok
+memcached ok
+redis ok
+supervisor ok
+httpd ok
+httpd-utils not ok
+unbound ok
+rpcbind ok
+dnsmasq ok
+nfs-utils ok
+nfs-common not ok
+samba ok
+samba-winbind-clients ok
+samba-winbind ok
+ctdb ok
+ftp ok
+vsftp not ok
